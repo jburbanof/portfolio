@@ -1,0 +1,534 @@
+$background: #001233;
+$color: #0466c8;
+$tittleFont: "Fugaz One", cursive;
+$textFont: "BenchNine", sans-001233erif;
+$navText: rgb(111, 171, 240);
+$textShadow: #002855;
+$btnBackground: #001845;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: $textFont;
+}
+#fp-nav ul li a span {
+  background-color: $color !important;
+}
+body {
+  width: 100%;
+  background-color: #001233;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+body::-webkit-scrollbar {
+  width: 0px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $color;
+  border-radius: 3.5px;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  color: $color;
+}
+
+#buttons {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+  #idioms {
+    left: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    .idiom {
+      width: 60px;
+      height: 33px;
+      margin: 15px;
+      font-size: 20px;
+      background-color: $color;
+      box-shadow: 0px 0px 10px $navText;
+      color: $color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .flags {
+        width: 100%;
+        height: 50px;
+      }
+    }
+
+    .idiom::after:hover {
+      background-color: #0000;
+    }
+    .idiom:hover {
+      box-shadow: 0px 0px 30px $color;
+      filter: brightness(130%);
+    }
+  }
+
+  #navBarTop {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    width: 60%;
+    left: 20%;
+    display: none;
+    #navBarTopList {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      list-style: none;
+      width: 70%;
+      .navBarItem {
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+      }
+      a {
+        color: $color !important;
+        position: relative;
+        padding: 5px 25px;
+        width: 100px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.2s;
+        display: inline-block;
+
+        span {
+          position: absolute;
+          display: block;
+        }
+        span:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, $color);
+        }
+        span:nth-child(3) {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(270deg, transparent, $color);
+        }
+        span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(0deg, transparent, $color);
+        }
+        span:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, $color);
+        }
+      }
+      a:hover span:nth-child(1) {
+        left: 100%;
+        transition: 0.3s;
+      }
+
+      a:hover span:nth-child(3) {
+        right: 100%;
+        transition: 0.3s;
+        transition-delay: 0.15s;
+      }
+
+      a:hover span:nth-child(2) {
+        top: 100%;
+        transition: 0.3s;
+        transition-delay: 0.075s;
+      }
+
+      a:hover span:nth-child(4) {
+        bottom: 100%;
+        transition: 0.3s;
+        transition-delay: 0.225s;
+      }
+
+      a:visited {
+        color: $navText;
+      }
+      a:hover {
+        color: $background !important;
+        background-color: $color;
+        box-shadow: 0 0 10px $color, 0 0 40px $color, 0 0 80px $color;
+        border-radius: 10 px;
+        transition-delay: 0.25s;
+        filter: brightness(120%);
+      }
+      a:active {
+        color: $color;
+      }
+    }
+  }
+
+  .cv {
+    width: 200px;
+    position: fixed;
+    right: 45px;
+
+    #cv {
+      border-radius: 50px;
+      background: $color;
+      box-shadow: 0px 0px 10px $color;
+
+      margin: 15px;
+      height: 35px;
+      font-size: 35px;
+      text-decoration: none;
+      color: $background;
+
+      padding: 0 15px;
+    }
+    #cv:hover {
+      background-color: $color;
+      box-shadow: 0px 0px 30px $color;
+      filter: brightness(130%);
+    }
+  }
+  #menu {
+    width: 80px;
+    height: 80px;
+    background-color: $color;
+    border-radius: 40px;
+    position: fixed;
+    bottom: 60px;
+    right: 120px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px $color;
+    cursor: pointer;
+
+    #navToggle {
+      position: absolute;
+      display: none;
+    }
+    #navIcon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .line {
+        width: 40px;
+        height: 7px;
+        background-color: $background;
+        margin: 3px;
+        border-radius: 3px;
+      }
+    }
+  }
+  #menu:hover {
+    box-shadow: 0px 0px 20px $color;
+    filter: brightness(120%);
+    cursor: pointer;
+  }
+}
+#intro {
+  .fp-tableCell:nth-child(1) {
+    display: grid;
+    grid-template-rows: repeat(3, 33.3%);
+  }
+  #presentation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    #description {
+      position: absolute;
+      left: -750px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      h1 {
+        font-family: $tittleFont;
+        font-size: 100px;
+        text-shadow: 4px 2px 0px $navText;
+        color: $color;
+        filter: brightness(110%);
+      }
+      h2 {
+        font-size: 50px;
+        color: $navText;
+      }
+    }
+
+    #picture {
+      position: absolute;
+      width: 250px;
+      min-height: 250px;
+      background-color: $navText;
+      border-radius: 125px;
+    }
+  }
+  #navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #navBarList {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      list-style: none;
+      width: 70%;
+      .navBarItem {
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+      }
+      a {
+        color: $color !important;
+        position: relative;
+        padding: 5px 25px;
+        width: 100px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.2s;
+        display: inline-block;
+
+        span {
+          position: absolute;
+          display: block;
+        }
+        span:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, $color);
+        }
+        span:nth-child(3) {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(270deg, transparent, $color);
+        }
+        span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(0deg, transparent, $color);
+        }
+        span:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, $color);
+        }
+      }
+      a:hover span:nth-child(1) {
+        left: 100%;
+        transition: 0.3s;
+      }
+
+      a:hover span:nth-child(3) {
+        right: 100%;
+        transition: 0.3s;
+        transition-delay: 0.15s;
+      }
+
+      a:hover span:nth-child(2) {
+        top: 100%;
+        transition: 0.3s;
+        transition-delay: 0.075s;
+      }
+
+      a:hover span:nth-child(4) {
+        bottom: 100%;
+        transition: 0.3s;
+        transition-delay: 0.225s;
+      }
+
+      a:visited {
+        color: $navText;
+      }
+      a:hover {
+        color: $background !important;
+        background-color: $color;
+        box-shadow: 0 0 10px $color, 0 0 40px $color, 0 0 80px $color;
+        border-radius: 10 px;
+        transition-delay: 0.25s;
+        filter: brightness(120%);
+      }
+      a:active {
+        color: $color;
+      }
+    }
+  }
+}
+#aboutSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #aboutContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .sectionTitle {
+      font-family: $tittleFont;
+      font-size: 60px;
+      text-shadow: 4px 2px 0px $navText;
+      color: $color;
+      filter: brightness(110%);
+    }
+    .aboutMe{
+      width: 80%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      p{
+        width: 50%;
+        font-size: 30px;
+        color: $navText;
+      }
+    }
+  }
+}
+#projectsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #projectsContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .sectionTitle {
+      font-family: $tittleFont;
+      font-size: 60px;
+      text-shadow: 4px 2px 0px $navText;
+      color: $color;
+      filter: brightness(110%);
+      margin-bottom: 150px;
+    }
+    #cards {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-rows: 300px;
+      gap: 30px;
+
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        .face{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          backface-visibility: hidden;
+          transition: 1s ease-in-out;
+        }
+        .front{
+          background-color: $background;
+          
+        }
+        .back{
+          background-color: whitesmoke;
+          color: $background;
+          transform: perspective(500px) rotateY(180deg);
+        }
+      }
+      .card:hover .face.front {
+        transform: perspective(500px) rotateY(180deg);
+      }
+      .card:hover .face.back{
+        transform: perspective(500px) rotateY(360deg);
+      }
+    }
+  }
+}
+#contactSection {
+  .fp-tableCell {
+    #contactContent {
+      width: 50%;
+      height: 60%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #023d7d42;
+      backdrop-filter: blur(1px);
+      border-radius: 20px;
+      .sectionTitle {
+        font-family: $tittleFont;
+        font-size: 60px;
+        text-shadow: 4px 2px 0px $navText;
+        color: $color;
+        filter: brightness(110%);
+        margin-bottom: 60px;
+      }
+      #contactForm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+
+        input,
+        textarea,
+        button {
+          width: 80%;
+          margin-bottom: 20px;
+          padding: 7px;
+          box-sizing: border-box;
+          font-size: 25px;
+        }
+        textarea {
+          max-width: 80%;
+          min-width: 80%;
+          max-height: 250px;
+          min-height: 100px;
+        }
+        #submit {
+          cursor: pointer;
+          background-color: $color;
+          color: $background;
+          border: none;
+        }
+        #submit:hover {
+          box-shadow: 0px 0px 30px $color;
+          filter: brightness(130%);
+        }
+      }
+    }
+  }
+}

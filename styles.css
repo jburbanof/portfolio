@@ -1,0 +1,773 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "BenchNine", sans-001233erif;
+}
+
+#fp-nav ul li a span {
+  background-color: #0466c8 !important;
+}
+
+body {
+  width: 100%;
+  background-color: #001233;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0466c8;
+  border-radius: 3.5px;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  color: #0466c8;
+}
+
+#buttons {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+}
+
+#buttons #idioms {
+  left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#buttons #idioms .idiom {
+  width: 60px;
+  height: 33px;
+  margin: 15px;
+  font-size: 20px;
+  background-color: #0466c8;
+  -webkit-box-shadow: 0px 0px 10px #6fabf0;
+          box-shadow: 0px 0px 10px #6fabf0;
+  color: #0466c8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#buttons #idioms .idiom .flags {
+  width: 100%;
+  height: 50px;
+}
+
+#buttons #idioms .idiom::after:hover {
+  background-color: #0000;
+}
+
+#buttons #idioms .idiom:hover {
+  -webkit-box-shadow: 0px 0px 30px #0466c8;
+          box-shadow: 0px 0px 30px #0466c8;
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+}
+
+#buttons #navBarTop {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 10px;
+  width: 60%;
+  left: 20%;
+  display: none;
+}
+
+#buttons #navBarTop #navBarTopList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  width: 70%;
+}
+
+#buttons #navBarTop #navBarTopList .navBarItem {
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+#buttons #navBarTop #navBarTopList a {
+  color: #0466c8 !important;
+  position: relative;
+  padding: 5px 25px;
+  width: 100px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: inline-block;
+}
+
+#buttons #navBarTop #navBarTopList a span {
+  position: absolute;
+  display: block;
+}
+
+#buttons #navBarTop #navBarTopList a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#0466c8));
+  background: linear-gradient(90deg, transparent, #0466c8);
+}
+
+#buttons #navBarTop #navBarTopList a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#0466c8));
+  background: linear-gradient(270deg, transparent, #0466c8);
+}
+
+#buttons #navBarTop #navBarTopList a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#0466c8));
+  background: linear-gradient(0deg, transparent, #0466c8);
+}
+
+#buttons #navBarTop #navBarTopList a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#0466c8));
+  background: linear-gradient(180deg, transparent, #0466c8);
+}
+
+#buttons #navBarTop #navBarTopList a:hover span:nth-child(1) {
+  left: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#buttons #navBarTop #navBarTopList a:hover span:nth-child(3) {
+  right: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+#buttons #navBarTop #navBarTopList a:hover span:nth-child(2) {
+  top: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
+}
+
+#buttons #navBarTop #navBarTopList a:hover span:nth-child(4) {
+  bottom: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.225s;
+          transition-delay: 0.225s;
+}
+
+#buttons #navBarTop #navBarTopList a:visited {
+  color: #6fabf0;
+}
+
+#buttons #navBarTop #navBarTopList a:hover {
+  color: #001233 !important;
+  background-color: #0466c8;
+  -webkit-box-shadow: 0 0 10px #0466c8, 0 0 40px #0466c8, 0 0 80px #0466c8;
+          box-shadow: 0 0 10px #0466c8, 0 0 40px #0466c8, 0 0 80px #0466c8;
+  border-radius: 10 px;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#buttons #navBarTop #navBarTopList a:active {
+  color: #0466c8;
+}
+
+#buttons .cv {
+  width: 200px;
+  position: fixed;
+  right: 45px;
+}
+
+#buttons .cv #cv {
+  border-radius: 50px;
+  background: #0466c8;
+  -webkit-box-shadow: 0px 0px 10px #0466c8;
+          box-shadow: 0px 0px 10px #0466c8;
+  margin: 15px;
+  height: 35px;
+  font-size: 35px;
+  text-decoration: none;
+  color: #001233;
+  padding: 0 15px;
+}
+
+#buttons .cv #cv:hover {
+  background-color: #0466c8;
+  -webkit-box-shadow: 0px 0px 30px #0466c8;
+          box-shadow: 0px 0px 30px #0466c8;
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+}
+
+#buttons #menu {
+  width: 80px;
+  height: 80px;
+  background-color: #0466c8;
+  border-radius: 40px;
+  position: fixed;
+  bottom: 60px;
+  right: 120px;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 20px #0466c8;
+          box-shadow: 0px 0px 20px #0466c8;
+  cursor: pointer;
+}
+
+#buttons #menu #navToggle {
+  position: absolute;
+  display: none;
+}
+
+#buttons #menu #navIcon {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#buttons #menu #navIcon .line {
+  width: 40px;
+  height: 7px;
+  background-color: #001233;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+#buttons #menu:hover {
+  -webkit-box-shadow: 0px 0px 20px #0466c8;
+          box-shadow: 0px 0px 20px #0466c8;
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+  cursor: pointer;
+}
+
+#intro .fp-tableCell:nth-child(1) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (33.3%)[3];
+      grid-template-rows: repeat(3, 33.3%);
+}
+
+#intro #presentation {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#intro #presentation #description {
+  position: absolute;
+  left: -750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#intro #presentation #description h1 {
+  font-family: "Fugaz One", cursive;
+  font-size: 100px;
+  text-shadow: 4px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+#intro #presentation #description h2 {
+  font-size: 50px;
+  color: #6fabf0;
+}
+
+#intro #presentation #picture {
+  position: absolute;
+  width: 250px;
+  min-height: 250px;
+  background-color: #6fabf0;
+  border-radius: 125px;
+}
+
+#intro #navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#intro #navBar #navBarList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  width: 70%;
+}
+
+#intro #navBar #navBarList .navBarItem {
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+#intro #navBar #navBarList a {
+  color: #0466c8 !important;
+  position: relative;
+  padding: 5px 25px;
+  width: 100px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: inline-block;
+}
+
+#intro #navBar #navBarList a span {
+  position: absolute;
+  display: block;
+}
+
+#intro #navBar #navBarList a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#0466c8));
+  background: linear-gradient(90deg, transparent, #0466c8);
+}
+
+#intro #navBar #navBarList a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#0466c8));
+  background: linear-gradient(270deg, transparent, #0466c8);
+}
+
+#intro #navBar #navBarList a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#0466c8));
+  background: linear-gradient(0deg, transparent, #0466c8);
+}
+
+#intro #navBar #navBarList a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#0466c8));
+  background: linear-gradient(180deg, transparent, #0466c8);
+}
+
+#intro #navBar #navBarList a:hover span:nth-child(1) {
+  left: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#intro #navBar #navBarList a:hover span:nth-child(3) {
+  right: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+#intro #navBar #navBarList a:hover span:nth-child(2) {
+  top: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
+}
+
+#intro #navBar #navBarList a:hover span:nth-child(4) {
+  bottom: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-delay: 0.225s;
+          transition-delay: 0.225s;
+}
+
+#intro #navBar #navBarList a:visited {
+  color: #6fabf0;
+}
+
+#intro #navBar #navBarList a:hover {
+  color: #001233 !important;
+  background-color: #0466c8;
+  -webkit-box-shadow: 0 0 10px #0466c8, 0 0 40px #0466c8, 0 0 80px #0466c8;
+          box-shadow: 0 0 10px #0466c8, 0 0 40px #0466c8, 0 0 80px #0466c8;
+  border-radius: 10 px;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#intro #navBar #navBarList a:active {
+  color: #0466c8;
+}
+
+#aboutSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#aboutSection #aboutContent {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#aboutSection #aboutContent .sectionTitle {
+  font-family: "Fugaz One", cursive;
+  font-size: 60px;
+  text-shadow: 4px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+#aboutSection #aboutContent .aboutMe {
+  width: 80%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#aboutSection #aboutContent .aboutMe p {
+  width: 50%;
+  font-size: 30px;
+  color: #6fabf0;
+}
+
+#projectsSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#projectsSection #projectsContent {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#projectsSection #projectsContent .sectionTitle {
+  font-family: "Fugaz One", cursive;
+  font-size: 60px;
+  text-shadow: 4px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  margin-bottom: 150px;
+}
+
+#projectsSection #projectsContent #cards {
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-rows: 300px;
+      grid-template-rows: 300px;
+  gap: 30px;
+}
+
+#projectsSection #projectsContent #cards .card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#projectsSection #projectsContent #cards .card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+#projectsSection #projectsContent #cards .card .front {
+  background-color: #001233;
+}
+
+#projectsSection #projectsContent #cards .card .back {
+  background-color: whitesmoke;
+  color: #001233;
+  -webkit-transform: perspective(500px) rotateY(180deg);
+          transform: perspective(500px) rotateY(180deg);
+}
+
+#projectsSection #projectsContent #cards .card:hover .face.front {
+  -webkit-transform: perspective(500px) rotateY(180deg);
+          transform: perspective(500px) rotateY(180deg);
+}
+
+#projectsSection #projectsContent #cards .card:hover .face.back {
+  -webkit-transform: perspective(500px) rotateY(360deg);
+          transform: perspective(500px) rotateY(360deg);
+}
+
+#contactSection .fp-tableCell #contactContent {
+  width: 50%;
+  height: 60%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #023d7d42;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  border-radius: 20px;
+}
+
+#contactSection .fp-tableCell #contactContent .sectionTitle {
+  font-family: "Fugaz One", cursive;
+  font-size: 60px;
+  text-shadow: 4px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  margin-bottom: 60px;
+}
+
+#contactSection .fp-tableCell #contactContent #contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+#contactSection .fp-tableCell #contactContent #contactForm input,
+#contactSection .fp-tableCell #contactContent #contactForm textarea,
+#contactSection .fp-tableCell #contactContent #contactForm button {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 7px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 25px;
+}
+
+#contactSection .fp-tableCell #contactContent #contactForm textarea {
+  max-width: 80%;
+  min-width: 80%;
+  max-height: 250px;
+  min-height: 100px;
+}
+
+#contactSection .fp-tableCell #contactContent #contactForm #submit {
+  cursor: pointer;
+  background-color: #0466c8;
+  color: #001233;
+  border: none;
+}
+
+#contactSection .fp-tableCell #contactContent #contactForm #submit:hover {
+  -webkit-box-shadow: 0px 0px 30px #0466c8;
+          box-shadow: 0px 0px 30px #0466c8;
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+}
+/*# sourceMappingURL=styles.css.map */
