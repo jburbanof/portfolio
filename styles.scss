@@ -16,7 +16,8 @@ $btnBackground: #001845;
 }
 body {
   width: 100%;
-  background-color: #001233;
+  background-attachment: fixed;
+  background-color: $background;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 body::-webkit-scrollbar {
@@ -398,13 +399,13 @@ section {
       color: $color;
       filter: brightness(110%);
     }
-    .aboutMe{
+    .aboutMe {
       width: 80%;
       height: 60%;
       display: flex;
       align-items: center;
       flex-direction: row;
-      p{
+      p {
         width: 50%;
         font-size: 30px;
         color: $navText;
@@ -432,10 +433,9 @@ section {
       margin-bottom: 150px;
     }
     #cards {
-      width: 80%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-template-rows: 300px;
+      grid-template-columns: repeat(4, 320px);
+      grid-template-rows: 270px;
       gap: 30px;
 
       .card {
@@ -443,7 +443,8 @@ section {
         width: 100%;
         height: 100%;
         transform-style: preserve-3d;
-        .face{
+        border-radius: 20px;
+        .face {
           position: absolute;
           top: 0;
           left: 0;
@@ -453,14 +454,27 @@ section {
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: column;
           backface-visibility: hidden;
           transition: 1s ease-in-out;
-        }
-        .front{
-          background-color: $background;
+          border-radius: 20px;
           
         }
-        .back{
+        .front {
+          background-color: $background;
+          img{
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            width: 100%;
+            height: 200px;
+          }
+          h3{
+            height: 70px;
+            font-size: 50px;
+            color: $color;
+          }
+        }
+        .back {
           background-color: whitesmoke;
           color: $background;
           transform: perspective(500px) rotateY(180deg);
@@ -469,8 +483,60 @@ section {
       .card:hover .face.front {
         transform: perspective(500px) rotateY(180deg);
       }
-      .card:hover .face.back{
+      .card:hover .face.back {
         transform: perspective(500px) rotateY(360deg);
+      }
+    }
+  }
+}
+#skillsSection {
+  #skillsContent {
+    width: 70%;
+    height: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .sectionTitle {
+      font-family: $tittleFont;
+      font-size: 80px;
+      text-shadow: 4px 2px 0px $navText;
+      color: $color;
+      filter: brightness(110%);
+      margin-bottom: 60px;
+    }
+    .skills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      .skill{
+        margin: 0 20px;
+      }
+    }
+    h3{
+      margin: 50px 0 30px;
+      font-family: $tittleFont;
+      font-size: 55px;
+      text-shadow: 2px 2px 0px $navText;
+      color: $color;
+      filter: brightness(110%);
+      
+    }
+    .interestedIn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .interests{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        .interest{
+          margin: 0 20px;
+        }
       }
     }
   }

@@ -10,6 +10,7 @@
 
 body {
   width: 100%;
+  background-attachment: fixed;
   background-color: #001233;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
@@ -627,13 +628,12 @@ section {
 }
 
 #projectsSection #projectsContent #cards {
-  width: 80%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  -ms-grid-rows: 300px;
-      grid-template-rows: 300px;
+  -ms-grid-columns: (320px)[4];
+      grid-template-columns: repeat(4, 320px);
+  -ms-grid-rows: 270px;
+      grid-template-rows: 270px;
   gap: 30px;
 }
 
@@ -643,6 +643,7 @@ section {
   height: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  border-radius: 20px;
 }
 
 #projectsSection #projectsContent #cards .card .face {
@@ -662,14 +663,32 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
+  border-radius: 20px;
 }
 
 #projectsSection #projectsContent #cards .card .front {
   background-color: #001233;
+}
+
+#projectsSection #projectsContent #cards .card .front img {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+#projectsSection #projectsContent #cards .card .front h3 {
+  height: 70px;
+  font-size: 50px;
+  color: #0466c8;
 }
 
 #projectsSection #projectsContent #cards .card .back {
@@ -687,6 +706,101 @@ section {
 #projectsSection #projectsContent #cards .card:hover .face.back {
   -webkit-transform: perspective(500px) rotateY(360deg);
           transform: perspective(500px) rotateY(360deg);
+}
+
+#skillsSection #skillsContent {
+  width: 70%;
+  height: 60%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#skillsSection #skillsContent .sectionTitle {
+  font-family: "Fugaz One", cursive;
+  font-size: 80px;
+  text-shadow: 4px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  margin-bottom: 60px;
+}
+
+#skillsSection #skillsContent .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#skillsSection #skillsContent .skills .skill {
+  margin: 0 20px;
+}
+
+#skillsSection #skillsContent h3 {
+  margin: 50px 0 30px;
+  font-family: "Fugaz One", cursive;
+  font-size: 55px;
+  text-shadow: 2px 2px 0px #6fabf0;
+  color: #0466c8;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+#skillsSection #skillsContent .interestedIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#skillsSection #skillsContent .interestedIn .interests {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#skillsSection #skillsContent .interestedIn .interests .interest {
+  margin: 0 20px;
 }
 
 #contactSection .fp-tableCell #contactContent {
