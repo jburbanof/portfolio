@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" href="./styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=BenchNine&family=Fugaz+One&display=swap"
@@ -46,6 +46,15 @@
               About
             </a>
           </li>
+          <li class="navBarItem" data-menuanchor="skills">
+            <a href="#skills">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Skills
+            </a>
+          </li>
           <li class="navBarItem" data-menuanchor="projects">
             <a href="#projects">
               <span></span>
@@ -81,16 +90,21 @@
     </div>
     <div id="fullpage">
       <section id="intro" class="section">
-        <div></div>
-        <div id="presentation" class="introSection">
-          <div id="description">
-            <h1 id="name">Julián Burbano</h1>
-            <h2 id="profession">Front-end Developer</h2>
+        <div id="dummy">
+          <div id="pictureDummy">
+            <img src="" alt="" class="picture" />
           </div>
-
+        </div>
+        <div id="presentation" class="introSection">
           <div id="picture">
             <img src="" alt="" class="picture" />
           </div>
+          <div id="description">
+            <h1 id="name">Julián<br class="titleBr"/> Burbano</h1>
+            <h2 id="profession">Front-end Developer</h2>
+          </div>
+
+          
         </div>
         <nav class="introSection" id="navBar">
           <ul id="navBarList">
@@ -110,6 +124,15 @@
                 <span></span>
                 <span></span>
                 About
+              </a>
+            </li>
+            <li class="navBarItem" data-menuanchor="skills">
+              <a href="#skills">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Skills
               </a>
             </li>
             <li class="navBarItem">
@@ -142,7 +165,46 @@
           </div>
         </div>
       </section>
-      <section id="projectsSection" class="section">
+      <section id="skillsSection" class="section">
+        <div id="skillsContent">
+          <h2 class="sectionTitle">Skills</h2>
+          <div class="skills">
+            <div class="skill">
+              <img src="./logos/html.png" alt="Html" title="Html" width="150" height="150">
+            </div>
+            <div class="skill">
+              <img src="./logos/css.png" alt="Css" title="Css" width="150" height="150">
+            </div>
+            <div class="skill">
+              <img src="./logos/js.png" alt="javascript" title="Javascript" width="150" height="150">
+            </div>
+            <div class="skill">
+              <img src="./logos/sass.png" alt="Sass" title="Sass" width="200" height="150">
+            </div>
+            <div class="skill">
+              <img src="./logos/git.png" alt="Git" title="Git" width="150" height="150">
+            </div>
+            <div class="skill">
+              <img src="./logos/python.png" alt="Python" title="Python" width="150" height="150">
+            </div>
+          </div>
+          <div class="interestedIn">
+            <h3>I want <br class="titleBr"> to learn</h3>
+            <div class="interests">
+              <div class="interest">
+                <img src="./logos/react.png" alt="Html" title="React" width="150" height="150">
+              </div>
+              <div class="interest">
+                <img src="./logos/mysql.png" alt="MySQL" title="MySQL" width="170" height="150">
+              </div>
+              <div class="interest">
+                <img src="./logos/mongo.png" alt="MongoDB" title="MongoDB" width="150" height="150">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projectsSection" class="section fp-auto-height-responsive">
         <div id="projectsContent">
           <h2 class="sectionTitle">Projects</h2>
           <div id="cards">
@@ -194,7 +256,7 @@
               </div>
               <div class="card">
                 <div class="face front">
-                  <img src="" alt="">
+                  <img src="./sites/Screenshot from 2021-06-08 14-23-01.png" alt="">
                     
                   </img>
                   <h3>
@@ -214,45 +276,7 @@
           </div>
         </div>
       </section>
-      <section id="skillsSection" class="section">
-        <div id="skillsContent">
-          <h2 class="sectionTitle">Skills</h2>
-          <div class="skills">
-            <div class="skill">
-              <img src="./logos/html.png" alt="Html" title="Html" width="150" height="150">
-            </div>
-            <div class="skill">
-              <img src="./logos/css.png" alt="Css" title="Css" width="150" height="150">
-            </div>
-            <div class="skill">
-              <img src="./logos/js.png" alt="javascript" title="Javascript" width="150" height="150">
-            </div>
-            <div class="skill">
-              <img src="./logos/sass.png" alt="Sass" title="Sass" width="200" height="150">
-            </div>
-            <div class="skill">
-              <img src="./logos/git.png" alt="Git" title="Git" width="150" height="150">
-            </div>
-            <div class="skill">
-              <img src="./logos/python.png" alt="Python" title="Python" width="150" height="150">
-            </div>
-          </div>
-          <div class="interestedIn">
-            <h3>Interested in</h3>
-            <div class="interests">
-              <div class="interest">
-                <img src="./logos/react.png" alt="Html" title="React" width="150" height="150">
-              </div>
-              <div class="interest">
-                <img src="./logos/mysql.png" alt="MySQL" title="MySQL" width="170" height="150">
-              </div>
-              <div class="interest">
-                <img src="./logos/mongo.png" alt="MongoDB" title="MongoDB" width="150" height="150">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
       <section id="contactSection" class="section">
         <div id="contactContent">
           <h2 class="sectionTitle">Contact</h2>

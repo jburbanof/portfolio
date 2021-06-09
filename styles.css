@@ -8,8 +8,12 @@
   background-color: #0466c8 !important;
 }
 
+.titleBr {
+  display: none;
+}
+
 body {
-  width: 100%;
+  width: 100vw;
   background-attachment: fixed;
   background-color: #001233;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
@@ -26,7 +30,6 @@ body::-webkit-scrollbar-thumb {
 
 section {
   width: 100%;
-  height: 100vh;
   color: #0466c8;
 }
 
@@ -328,8 +331,31 @@ section {
 #intro .fp-tableCell:nth-child(1) {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (33.3%)[3];
-      grid-template-rows: repeat(3, 33.3%);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+}
+
+#intro #dummy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#intro #dummy #pictureDummy {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: #6fabf0;
+  border-radius: 125px;
+  opacity: 0;
 }
 
 #intro #presentation {
@@ -343,10 +369,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #intro #presentation #description {
@@ -384,7 +410,7 @@ section {
 #intro #presentation #picture {
   position: absolute;
   width: 250px;
-  min-height: 250px;
+  height: 250px;
   background-color: #6fabf0;
   border-radius: 125px;
 }
@@ -588,6 +614,7 @@ section {
 }
 
 #projectsSection {
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -624,7 +651,7 @@ section {
   color: #0466c8;
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 #projectsSection #projectsContent #cards {
@@ -710,7 +737,6 @@ section {
 
 #skillsSection #skillsContent {
   width: 70%;
-  height: 60%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -738,23 +764,13 @@ section {
 }
 
 #skillsSection #skillsContent .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#skillsSection #skillsContent .skills .skill {
-  margin: 0 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 150px 150px 200px 150px 150px;
+      grid-template-columns: 150px 150px 150px 200px 150px 150px;
+  -ms-grid-rows: 150px;
+      grid-template-rows: 150px;
+  gap: 20px;
 }
 
 #skillsSection #skillsContent h3 {
@@ -784,28 +800,26 @@ section {
 }
 
 #skillsSection #skillsContent .interestedIn .interests {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (150px)[3];
+      grid-template-columns: repeat(3, 150px);
+  -ms-grid-rows: 150px;
+      grid-template-rows: 150px;
 }
 
 #skillsSection #skillsContent .interestedIn .interests .interest {
   margin: 0 20px;
 }
 
-#contactSection .fp-tableCell #contactContent {
+#contactSection {
+  width: 100%;
+  height: auto;
+}
+
+#contactSection #contactContent {
   width: 50%;
-  height: 60%;
+  height: 600px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -826,7 +840,7 @@ section {
   border-radius: 20px;
 }
 
-#contactSection .fp-tableCell #contactContent .sectionTitle {
+#contactSection #contactContent .sectionTitle {
   font-family: "Fugaz One", cursive;
   font-size: 60px;
   text-shadow: 4px 2px 0px #6fabf0;
@@ -836,7 +850,7 @@ section {
   margin-bottom: 60px;
 }
 
-#contactSection .fp-tableCell #contactContent #contactForm {
+#contactSection #contactContent #contactForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -853,9 +867,9 @@ section {
   width: 100%;
 }
 
-#contactSection .fp-tableCell #contactContent #contactForm input,
-#contactSection .fp-tableCell #contactContent #contactForm textarea,
-#contactSection .fp-tableCell #contactContent #contactForm button {
+#contactSection #contactContent #contactForm input,
+#contactSection #contactContent #contactForm textarea,
+#contactSection #contactContent #contactForm button {
   width: 80%;
   margin-bottom: 20px;
   padding: 7px;
@@ -864,24 +878,142 @@ section {
   font-size: 25px;
 }
 
-#contactSection .fp-tableCell #contactContent #contactForm textarea {
+#contactSection #contactContent #contactForm textarea {
   max-width: 80%;
   min-width: 80%;
   max-height: 250px;
   min-height: 100px;
 }
 
-#contactSection .fp-tableCell #contactContent #contactForm #submit {
+#contactSection #contactContent #contactForm #submit {
   cursor: pointer;
   background-color: #0466c8;
   color: #001233;
   border: none;
 }
 
-#contactSection .fp-tableCell #contactContent #contactForm #submit:hover {
+#contactSection #contactContent #contactForm #submit:hover {
   -webkit-box-shadow: 0px 0px 30px #0466c8;
           box-shadow: 0px 0px 30px #0466c8;
   -webkit-filter: brightness(130%);
           filter: brightness(130%);
+}
+
+@media screen and (max-width: 1450px) {
+  #projectsSection #projectsContent .sectionTitle {
+    margin-bottom: 20px;
+  }
+  #projectsSection #projectsContent #cards {
+    -ms-grid-columns: (320px)[2];
+        grid-template-columns: repeat(2, 320px);
+    -ms-grid-rows: (270px)[2];
+        grid-template-rows: repeat(2, 270px);
+    gap: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #buttons {
+    display: none;
+  }
+  #intro .fp-tableCell:nth-child(1) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  #intro #dummy #pictureDummy {
+    opacity: 1;
+  }
+  #intro #presentation {
+    position: unset;
+  }
+  #intro #presentation #description {
+    position: unset;
+    left: unset;
+  }
+  #intro #presentation #description h1 {
+    font-size: 80px;
+  }
+  #intro #presentation #description h2 {
+    font-size: 55px;
+  }
+  #intro #presentation #picture {
+    display: none;
+  }
+  #intro #navBar {
+    display: none;
+  }
+  #aboutSection #aboutContent {
+    height: unset;
+  }
+  #aboutSection #aboutContent .aboutMe {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: unset;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  #aboutSection #aboutContent .aboutMe p {
+    width: 100%;
+  }
+  #skillsSection #skillsContent .skills {
+    -ms-grid-columns: 200px 150px 150px;
+        grid-template-columns: 200px 150px 150px;
+    -ms-grid-rows: 150px 150px;
+        grid-template-rows: 150px 150px;
+  }
+  #projectsSection #projectsContent #cards {
+    gap: 50px 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titleBr {
+    display: unset;
+  }
+  #intro #presentation {
+    padding-bottom: 200px;
+  }
+  #intro #presentation #description h1 {
+    text-align: center;
+    font-size: 70px;
+  }
+  #intro #presentation #description h2 {
+    font-size: 45px;
+  }
+  #skillsSection #skillsContent .skills {
+    -ms-grid-columns: 150px 150px;
+        grid-template-columns: 150px 150px;
+    -ms-grid-rows: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+  }
+  #skillsSection #skillsContent h3 {
+    text-align: center;
+  }
+  #skillsSection #skillsContent .interestedIn .interests {
+    -ms-grid-columns: (150px)[2];
+        grid-template-columns: repeat(2, 150px);
+    -ms-grid-rows: 150px 150px;
+        grid-template-rows: 150px 150px;
+  }
+  #projectsSection #projectsContent {
+    height: unset;
+  }
+  #projectsSection #projectsContent #cards {
+    -ms-grid-columns: 320px;
+        grid-template-columns: 320px;
+    -ms-grid-rows: (270px)[4];
+        grid-template-rows: repeat(4, 270px);
+  }
+  #contactSection #contactContent {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

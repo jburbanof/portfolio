@@ -26,9 +26,12 @@ function windowDimention() {
 window.addEventListener("load", (e) => {
   let distanceTop = -(ball.clientHeight + window.innerHeight / 3);
   let distanceRight = window.innerWidth / 2 - navBar.clientWidth / 2;
-
-  ball.style.top = `${distanceTop}px`;
-  windowDimention();
+  
+  if (width > 768){
+    ball.style.top = `${distanceTop}px`;
+    windowDimention();
+  }
+  
 });
 window.addEventListener("resize", (e) => {
   location.reload();
@@ -52,6 +55,7 @@ const pageSections = new fullpage('#fullpage', {
   scrollBar: true,
   loopBottom: false,
   menu: '#navBarTopList',
-  anchors:['home', 'about', 'projects', 'contact' ]
+  anchors:['home', 'about', 'skills','projects' , 'contact' ],
+  responsiveWidth: 768,
 });
 
