@@ -33,9 +33,12 @@ window.addEventListener("load", (e) => {
   }
   
 });
-window.addEventListener("resize", (e) => {
+if(width > 768){
+  window.addEventListener("resize", (e) => {
   location.reload();
 });
+}
+
 
 function scrollNavBar() {
   let scrollTop = document.documentElement.scrollTop;
