@@ -35,8 +35,102 @@ section {
   overflow-x: hidden;
   color: $color;
 }
-
+#menu {
+  width: 45px;
+  height: 45px;
+  background-color: $color;
+  border-radius: 22.5px;
+  position: fixed;
+  display: none;
+  top: 10px;
+  left: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px $color;
+  cursor: pointer;
+  z-index: 101;
+  flex-direction: column;
+    .line {
+      width: 25px;
+      height: 5px;
+      background-attachment: fixed;
+      background-color: $background;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+      margin: 2px;
+      border-radius: 2.5px;
+      cursor: pointer;
+    }
+  
+}
+#menu:hover {
+  box-shadow: 0px 0px 20px $color;
+  filter: brightness(120%);
+  cursor: pointer;
+}
+#checkBox{
+  display: none;
+}
+#navResponsive{
+  width: 100vw;
+  height: 100vh;
+  position:fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+  background-color: $background;
+  transition: 1s;
+  li{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: $color;
+    cursor: pointer;
+    
+    a{
+        width: 100%;
+        font-size: 40px;
+        margin: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+    #cvResponsive{
+      background-color: $color;
+      color: $background;
+      border-radius: 35px;
+    }
+    #cvResponsive:hover{
+      background-color: $color;
+      box-shadow: 0px 0px 30px $color;
+      filter: brightness(130%);
+    }
+    
+  }
+  .liResponsive :hover{
+    background-color: $color;
+    color: $btnBackground;
+    border-radius: 35px;
+    background-color: $color;
+    box-shadow: 0px 0px 30px $color;
+    filter: brightness(130%);
+  }
+  .liResponsive:active{
+    background-color: $color;
+    color: $btnBackground;
+    border-radius: 35px;
+    background-color: $color;
+    box-shadow: 0px 0px 30px $color;
+    filter: brightness(130%);
+  }
+}
 #buttons {
+  background-attachment: fixed;
+  background-color: $background;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%236fabf0' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -57,7 +151,6 @@ section {
       font-size: 20px;
       background-color: $color;
       box-shadow: 0px 0px 10px $navText;
-      color: $color;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,7 +166,7 @@ section {
     }
     .idiom:hover {
       box-shadow: 0px 0px 30px $color;
-      filter: brightness(130%);
+      filter: brightness(110%);
     }
   }
 
@@ -82,8 +175,8 @@ section {
     align-items: center;
     position: fixed;
     top: 5px;
-    width: 45%;
-    left: 27%;
+    width: 65%;
+    left: 14%;
     display: none;
     #navBarTopList {
       display: flex;
@@ -98,10 +191,10 @@ section {
         text-align: center;
       }
       a {
-        color: $color !important;
+        color: $color;
         position: relative;
         padding: 2px 5px;
-        margin: 0 20px;
+        margin: 0 30px;
         width: 100%;
         text-decoration: none;
         overflow: hidden;
@@ -165,7 +258,7 @@ section {
       }
 
       a:visited {
-        color: $navText;
+        color: $color;
       }
       a:hover {
         color: $background !important;
@@ -204,45 +297,7 @@ section {
       filter: brightness(130%);
     }
   }
-  #menu {
-    width: 80px;
-    height: 80px;
-    background-color: $color;
-    border-radius: 40px;
-    position: fixed;
-    bottom: 60px;
-    right: 120px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 20px $color;
-    cursor: pointer;
-
-    #navToggle {
-      position: absolute;
-      display: none;
-    }
-    #navIcon {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      .line {
-        width: 40px;
-        height: 7px;
-        background-color: $background;
-        margin: 3px;
-        border-radius: 3px;
-      }
-    }
-  }
-  #menu:hover {
-    box-shadow: 0px 0px 20px $color;
-    filter: brightness(120%);
-    cursor: pointer;
-  }
+  
 }
 #intro {
   .fp-tableCell:nth-child(1) {
@@ -262,6 +317,10 @@ section {
       background-color: $navText;
       border-radius: 100px;
       opacity: 0;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      overflow: hidden;
     }
   }
   #presentation {
@@ -292,10 +351,14 @@ section {
 
     #picture {
       position: absolute;
-      width: 200px;
-      height: 200px;
+      width: 215px;
+      height: 215px;
       background-color: $navText;
-      border-radius: 100px;
+      border-radius: 105.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
   }
   #navBar {
@@ -311,8 +374,7 @@ section {
       list-style: none;
       width: 70%;
       .navBarItem {
-        font-size: 40px;
-        width: 100%;
+        font-size: 30px;
         text-align: center;
       }
       a {
@@ -402,6 +464,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   #aboutContent {
     width: 100%;
     height: 100%;
@@ -450,6 +513,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   #projectsContent {
     width: 100%;
     height: 100%;
@@ -501,16 +565,61 @@ section {
             height: 165px;
           }
           h3 {
-            height: 30px;
+            height: 40px;
             font-size: 30px;
             color: $color;
+            
           }
         }
         .back {
-          background-color: whitesmoke;
+          background-color: white;
           color: $background;
           transform: perspective(500px) rotateY(180deg);
+          padding: 15px;
+          box-sizing: border-box;
+
+          .projectDescription{
+            font-size: 25px;
+            text-align: center;
+          }
+          .tecnologies{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: row;
+            li{
+              margin:5px;
+              box-shadow: 0 0 5px black;
+              border-radius: 2px;
+              background-color: white;
+            }
+            
+          }
+          .projectLinks{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: row;
+            a{
+              font-size: 20px;
+              color: $background;
+              margin: 3px 5px;
+              padding: 0 10px;
+              text-decoration: none;
+              background-color: $color;
+              border-radius: 13px;
+            }
+            a:hover{
+              box-shadow: 0px 0px 20px $color;
+              filter: brightness(120%);
+            }
+          }
+          
         }
+
       }
       .card:hover .face.front {
         transform: perspective(500px) rotateY(180deg);
@@ -539,9 +648,9 @@ section {
     }
     .skills {
       display: grid;
-      grid-template-columns: 125px 125px 125px 150px 125px 125px;
-      grid-template-rows: 125px;
-      gap: 20px;
+      grid-template-columns: 125px 125px 125px 150px ;
+      grid-template-rows: 125px 125px;
+      gap: 70px;
     }
     h3 {
       margin: 50px 0 30px;
@@ -590,7 +699,18 @@ section {
       text-shadow: 4px 2px 0px $navText;
       color: $color;
       filter: brightness(110%);
-      margin-bottom: 60px;
+    }
+    .social{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      .socialLink{
+        text-align: center;
+        width: 100px;
+      }
+     
     }
     #contactForm {
       display: flex;
@@ -661,9 +781,28 @@ section {
     }
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px){
+  #buttons{
+    #navBarTop{
+      #navBarTopList{
+          a{
+            font-size: 25px;
+            width: 70% ;
+          }
+      }
+    }
+    
+  }
+}
+@media screen and (max-width: 769px) {
+  #menu {
+    display: flex;
+    
+  }
+
   #buttons {
     display: none;
+    
   }
   #intro {
     .fp-tableCell:nth-child(1) {
@@ -682,6 +821,7 @@ section {
         position: unset;
         left: unset;
         h1 {
+          text-align: center;
           font-size: 80px;
         }
         h2 {
@@ -692,9 +832,10 @@ section {
         display: none;
       }
     }
-    #navBar {
+    #navBar{
       display: none;
     }
+    
   }
   #aboutSection {
     #aboutContent {
@@ -723,8 +864,9 @@ section {
     #skillsContent {
       
       .skills {
-        grid-template-columns: 200px 150px 150px;
-        grid-template-rows: 150px 150px;
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+        gap: 40px;
       }
       .interestedIn{
         h3{
@@ -790,7 +932,7 @@ section {
     }
   }
   #projectsSection {
-    
+    overflow: hidden;
     #projectsContent {
       height: unset;
       .sectionTitle{
